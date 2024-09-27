@@ -19,15 +19,15 @@ const Car: FC<CarProps> = ({ cars }) => {
 
   return (
     <>
-      <Card>
+      <Card className="w-[20%]">
         <CardHeader>
-          <CardTitle>{model}</CardTitle>
-          <CardDescription>{status}</CardDescription>
+          <CardTitle>модель: {model}</CardTitle>
+          <CardDescription>статус {status}</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>{engine_power}</p>
-          <p>{color}</p>
-          <p>{typeCar}</p>
+          <p>мощность двигателя {engine_power} л/с</p>
+          <p>цвет: {color}</p>
+          <p>тип: {typeCar}</p>
           <Image
             src={`/${img}`}
             width={100}
@@ -36,7 +36,7 @@ const Car: FC<CarProps> = ({ cars }) => {
           />
         </CardContent>
         <CardFooter>
-          <p>{price}</p>
+          <p>цена: {price}</p>
         </CardFooter>
       </Card>
     </>

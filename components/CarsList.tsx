@@ -12,11 +12,13 @@ const CarList = () => {
   }, []);
   return (
     <>
-      {carsData.length === 0 && <p>Загрузка...</p>}
-      {carsData.length > 0 &&
-        carsData.map((el) => {
-          return <Car cars={el} key={el.id} />;
-        })}
+      {carsData.length === 0 && <p className="flex justify-center">Загрузка...</p>}
+      <div className="flex justify-between gap-4 grid-cols-2 max-w-[1200px]">
+        {carsData.length > 0 &&
+          carsData.map((el) => {
+            return <Car cars={el} key={el.id} />;
+          })}
+      </div>
     </>
   );
 };
