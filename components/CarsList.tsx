@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { carsStore } from "@/CarsStore";
 import { Cars } from "@/type";
 import Car from "./Car";
+import Filters from "./Filters";
 
 const CarList = () => {
   const [carsData, setCarsData] = useState<Cars[]>([]);
@@ -12,8 +13,11 @@ const CarList = () => {
   }, []);
   return (
     <>
-      {carsData.length === 0 && <p className="flex justify-center">Загрузка...</p>}
-      <div className="flex justify-between gap-4 grid-cols-2 max-w-[1200px]">
+      <Filters />
+      {carsData.length === 0 && (
+        <p className="flex justify-center">Загрузка...</p>
+      )}
+      <div className="grid grid-cols-5 gap-4 m-4">
         {carsData.length > 0 &&
           carsData.map((el) => {
             return <Car cars={el} key={el.id} />;

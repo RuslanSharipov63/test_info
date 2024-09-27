@@ -19,7 +19,7 @@ const Car: FC<CarProps> = ({ cars }) => {
 
   return (
     <>
-      <Card className="w-[20%]">
+      <Card className="flex flex-col justify-between">
         <CardHeader>
           <CardTitle>модель: {model}</CardTitle>
           <CardDescription>статус {status}</CardDescription>
@@ -33,6 +33,8 @@ const Car: FC<CarProps> = ({ cars }) => {
             width={100}
             height={100}
             alt="auto"
+            object-fit="contain"
+            className="mt-2"
           />
         </CardContent>
         <CardFooter>
