@@ -15,7 +15,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
     []
   );
 
-  let arrForFilters: FilterStoreForStateType[];
+ let arrForFilters: FilterStoreForStateType[];
 
   useState(() => {
     arrForFilters = workFilters("");
@@ -25,7 +25,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
   });
 
   const handleChangeStatus = (param: string) => {
-    let newArr = workFilters(param);
+    const newArr = workFilters(param);
     setFiltersState(newArr);
     console.log(filtersState)
   };

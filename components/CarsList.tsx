@@ -14,8 +14,8 @@ const CarList = () => {
   }, []);
 
   const searchFilters = (param: FilterStoreForStateType[]) => {
-    let newArr: FilterStoreForStateType[] = [];
-    let newArr2: Cars[] = [];
+    const newArr: FilterStoreForStateType[] = [];
+    const newArr2: Cars[] = [];
     param.map((el) => {
       if (el.checked === true) {
         newArr.push(el);
