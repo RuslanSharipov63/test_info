@@ -17,8 +17,7 @@ const CheckboxComponent: FC<CheckboxComponentProps> = ({
   handleChangeStatus,
   checked,
 }) => {
-  const [check, setCheck] = useState<boolean>(false);
-
+  
   const handlerCheck = (event: string) => {
       handleChangeStatus(event);
   };

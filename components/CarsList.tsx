@@ -29,13 +29,17 @@ const CarList = () => {
           item.status === el.status ||
           item.typeCar === el.typeCar
         ) {
-          newArr2.push(item);
+          const checkEl = newArr2.includes(item);
+          if (checkEl === false) {
+            newArr2.push(item);
+          }
+
         }
       });
     });
-    const set: any = new Set(newArr2);
-
-    setCarsData([...set]);
+    /* const set = new Set<Cars>(newArr2);
+ */
+    setCarsData([...newArr2]);
   };
 
   return (

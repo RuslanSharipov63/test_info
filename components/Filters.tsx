@@ -1,11 +1,10 @@
 "use client";
-import { useState, useEffect, FC } from "react";
+import { useState, FC } from "react";
 import CheckboxComponent from "./CheckboxComponent";
 import { workFilters } from "@/FiltersStore";
 import { FilterStoreForStateType } from "@/type";
 import { Button } from "@/components/ui/button";
 
-type Model = { id: number; model: string; checked: boolean; disabled: boolean };
 
 type FiltersProps = {
   searchFilters: (pram: FilterStoreForStateType[]) => void;
