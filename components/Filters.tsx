@@ -37,7 +37,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
         <div className="flex flex-col gap-2 p-2">
           <p>Модель</p>
 
-          {filtersState.map((el: any) =>
+          {filtersState.map((el: FilterStoreForStateType) =>
             el.typeCheck === "model" ? (
               <CheckboxComponent
                 key={el.id}
@@ -53,7 +53,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
         </div>
         <div className="flex flex-col gap-2 p-2">
           <p>Цвет</p>
-          {filtersState.map((el: any) =>
+          {filtersState.map((el: FilterStoreForStateType) =>
             el.typeCheck === "color" ? (
               <CheckboxComponent
                 key={el.id}
@@ -69,7 +69,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
         </div>
         <div className="flex flex-col gap-2 p-2">
           <p>Статус</p>
-          {filtersState.map((el: any) =>
+          {filtersState.map((el: FilterStoreForStateType) =>
             el.typeCheck === "status" ? (
               <CheckboxComponent
                 key={el.id}
@@ -86,7 +86,7 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
 
         <div className="flex flex-col gap-2 p-2">
           <p>Тип</p>
-          {filtersState.map((el: any) =>
+          {filtersState.map((el: FilterStoreForStateType) =>
             el.typeCheck === "typecar" ? (
               <CheckboxComponent
                 key={el.id}

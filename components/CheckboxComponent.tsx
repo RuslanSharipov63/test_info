@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
 
 type CheckboxComponentProps = {
-  name: string;
-  value: string;
-  text: string;
+  name?: string;
+  value?: string;
+  text?: string;
   disabled: boolean;
   checked: boolean;
   handleChangeStatus: (event: string) => void;
@@ -31,7 +31,7 @@ const CheckboxComponent: FC<CheckboxComponentProps> = ({
         value={value}
         checked={checked}
         disabled={disabled}
-        onChange={(event: any) => handlerCheck(event.target.value)}
+        onChange={(event) => handlerCheck(event.target.value)}
       />
       <p className="text-sm font-medium">{text}</p>
     </div>
