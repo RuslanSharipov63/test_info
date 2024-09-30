@@ -21,7 +21,7 @@ const CarList = () => {
         newArr.push(el);
       }
     });
-    carsData.map((item) => {
+    carsStore.map((item) => {
       newArr.map((el) => {
         if (
           item.model === el.model ||
