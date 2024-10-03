@@ -32,3 +32,4 @@ export type FilterStoreForStateType = {
   checked: boolean;
   disabled: boolean;
 };
+

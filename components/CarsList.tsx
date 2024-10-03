@@ -14,20 +14,57 @@ const CarList = () => {
   }, []);
 
   const searchFilters = (param: FilterStoreForStateType[]) => {
-    const newArr: FilterStoreForStateType[] = [];
+    const newArr: string[] /* : FilterStoreForStateType[] */ = [];
     const newArr2: Cars[] = [];
     param.map((el) => {
       if (el.checked === true) {
-        newArr.push(el);
+        if (el.model != undefined) {
+          newArr.push(el.model);
+        }
+        if (el.status != undefined) {
+          newArr.push(el.status);
+        }
+        if (el.typeCar != undefined) {
+          newArr.push(el.typeCar);
+        }
+        if (el.color != undefined) {
+          newArr.push(el.color);
+        }
       }
     });
-    carsStore.map((item) => {
+
+    if (newArr.length === 1) {
+      carsStore.map((item) => {
+        if (item.model === newArr[0]) {
+          const checkEl = newArr2.includes(item);
+          if (checkEl === false) {
+            newArr2.push(item);
+          }
+        }
+      });
+    }
+
+    if (newArr.length > 1) {
+      carsStore.map((item) => {
+        let counter = 0;
+        newArr.map((el) => {
+          if (item.includes(newArr["el"])) {
+            counter++;
+          }
+          if (counter === newArr.length) {
+            const checkEl = newArr2.includes(item);
+            if (checkEl === false) {
+              newArr2.push(item);
+            }
+          }
+        });
+      });
+    }
+
+    /* carsStore.map((item) => {
       newArr.map((el) => {
         if (
-          item.model === el.model ||
-          item.color === el.color ||
-          item.status === el.status ||
-          item.typeCar === el.typeCar
+         el.model === item.model
         ) {
           const checkEl = newArr2.includes(item);
           if (checkEl === false) {
@@ -36,9 +73,9 @@ const CarList = () => {
 
         }
       });
-    });
-    /* const set = new Set<Cars>(newArr2);
- */
+    }); 
+    */
+
     setCarsData([...newArr2]);
   };
 

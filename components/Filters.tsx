@@ -26,7 +26,6 @@ const Filters: FC<FiltersProps> = ({ searchFilters }) => {
   const handleChangeStatus = (param: string) => {
     const newArr = workFilters(param);
     setFiltersState(newArr);
-    console.log(filtersState)
   };
 
  

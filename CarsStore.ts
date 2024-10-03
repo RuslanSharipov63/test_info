@@ -13,7 +13,7 @@ export const carsStore: Array<Cars>  = [
   },
   {
     id: 2,
-    model: "Lada",
+    model: "LADA",
     status: "budget",
     price: 1500000,
     engine_power: 163,
