@@ -17,7 +17,7 @@ const CarList = () => {
 
   const searchFilters = (param: FilterStoreForStateType[]) => {
     const newArr: FilterStoreForStateType[] = [];
-   let resultArr = []
+    let resultArr: Cars[] | undefined = [];
 
     param.map((value) => {
       if (value.checked) {
@@ -25,10 +25,12 @@ const CarList = () => {
       }
     });
     resultArr = sortFilter(newArr, carsStore);
+    if (resultArr) {
+      setCarsData([...resultArr]);
+    }
 
-    setCarsData([...resultArr]);
 
-   
+
   };
 
   return (

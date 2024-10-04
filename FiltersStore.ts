@@ -109,7 +109,7 @@ export const filterStore: FiltersStore = {
   white: {
     id: 16,
     typeCheck: "color",
-    color: "grey",
+    color: "white",
     checked: false,
     disabled: false,
   },

@@ -39,14 +39,12 @@ export const sortFilter = (
   });
 
   let timeArr2: Cars[] = [];
-  
-  if (newArr2.length === 0 && newArr1.length === 0) {
-    timeArr2 = afterArr;
-  }
 
-  if (newArr2.length === 0 && newArr1.length != 0) {
-    timeArr2 = newArr1;
-  }
+  if(newArr2.length != 0) {
+    timeArr2 = newArr2
+  } else if(newArr2.length === 0 && newArr1.length === 0) {
+    timeArr2 = afterArr;
+  } else if(newArr2.length === 0 && newArr1.length != 0) { timeArr2 = newArr1}
 
   checkFilter.map((el) => {
     if (el.status) {
@@ -61,7 +59,15 @@ export const sortFilter = (
     }
   });
 
-  let timeArr3 = newArr3.length === 0 ? afterArr : newArr3;
+  let timeArr3: Cars[] = []
+
+  if (newArr2.length === 0 && newArr1.length === 0 && newArr3.length === 0) {
+    timeArr3 = afterArr;
+  } else if (newArr3.length != 0) { timeArr3 = newArr3 }
+  else if (newArr2.length != 0 && newArr3.length === 0) { timeArr3 = newArr2 }
+  else if (newArr2.length === 0 && newArr1.length != 0 ) { timeArr3 = newArr1 }
+
+  console.log(timeArr3)
 
   checkFilter.map((el) => {
     if (el.typeCar) {
@@ -75,6 +81,9 @@ export const sortFilter = (
       });
     }
   });
-
-  return newArr4;
+if(newArr4.length != 0) return newArr4;
+if(newArr3.length != 0 && newArr4.length === 0) return newArr3;
+if(newArr2.length != 0 && newArr3.length === 0) return newArr2;
+if(newArr1.length != 0 && newArr2.length === 0) return newArr1;
+if(newArr1.length === 0 && newArr2.length === 0 && newArr3.length === 0 && newArr4.length === 0) return afterArr;
 };
