@@ -27,10 +27,12 @@ const CarList = () => {
     resultArr = sortFilter(newArr, carsStore);
     if (resultArr) {
       setCarsData([...resultArr]);
+      setCheckAddFilter(false);
     }
 
-
-
+    if (resultArr?.length === 0) {
+      setCheckAddFilter(true);
+    }
   };
 
   return (

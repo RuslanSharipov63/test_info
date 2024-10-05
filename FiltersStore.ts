@@ -134,6 +134,13 @@ export const filterStore: FiltersStore = {
     checked: false,
     disabled: false,
   },
+  metallic: {
+    id: 20,
+    typeCheck: "color",
+    color: "metallic",
+    checked: false,
+    disabled: false,
+  },
 };
 
 export const workFilters = (param: string) => {
